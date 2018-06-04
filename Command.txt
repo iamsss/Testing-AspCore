@@ -7,4 +7,9 @@
     >> cd MvcMovie.Tests
     >> dotnet add reference ../MvcMovie.mvc/mvcmovie.mvc.csproj
 
+### Adding Packages Asp.NetCore ALL 
+
+    >> cd MvcMovie.Tests
+    >> dotnet add package Microsoft.AspNetCore.All
+    >> dotnet test
 
