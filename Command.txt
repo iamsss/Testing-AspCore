@@ -1,0 +1,10 @@
+### Installing Tests Project 
+
+    >> dotnet new xunit -o MvcMovie.Tests
+
+### Adding Reference of Main Project to the test Project
+
+    >> cd MvcMovie.Tests
+    >> dotnet add reference ../MvcMovie.mvc/mvcmovie.mvc.csproj
+
+
