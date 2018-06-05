@@ -15,6 +15,16 @@ namespace MvcMovie.mvc.Controllers
             return View();
         }
 
+        public IActionResult List()
+        {
+           var products = new List<Product> {
+               new Product {Id = 1, Name = "Product 1"},
+               new Product {Id = 2, Name = "Product 2"}
+          };
+
+          return View(products);
+        }
+
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
