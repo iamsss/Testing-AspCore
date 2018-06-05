@@ -15,3 +15,8 @@ public void SomeMethod_TestSecond
   mockedIHelper.Setup(x=>x.firstcall()).Returns("Whatever i want");  
 }
 Here, think, SetUP as faking method call, we are just interested in Returns.
+
+
+>>> Read Moq Examples 
+
+    https://github.com/Moq/moq4/wiki/Quickstart

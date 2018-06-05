@@ -11,7 +11,7 @@ namespace MvcMovie.mvc.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IProductRepository productRespository;
+        private IProductRepository productRespository;
 
         public HomeController(IProductRepository productRespository)
         {
@@ -25,9 +25,7 @@ namespace MvcMovie.mvc.Controllers
 
         public IActionResult List()
         {
-            var products = productRespository.ListProduct();
-
-            return View(products);
+            return View(productRespository.ListProduct());
         }
 
         public IActionResult About()

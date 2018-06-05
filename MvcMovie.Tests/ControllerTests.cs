@@ -6,6 +6,8 @@ using MvcMovie.mvc.Models;
 using Xunit;
 using System.Linq;
 using MvcMovie.mvc.Infrastucture;
+using Moq;
+using MvcMovie.mvc.Core;
 
 namespace MvcMovie.Tests
 {
@@ -17,8 +19,8 @@ namespace MvcMovie.Tests
             
 
             //Arrange 
-            var repository = new InMemoryProductRepository();
-            var controller = new HomeController(repository);
+            var repository = new Mock<IProductRepository>();
+            var controller = new HomeController(repository.Object);
 
             //Act
             var result = controller.Index();
@@ -31,8 +33,12 @@ namespace MvcMovie.Tests
         public void VerifyListProductCount()
         {
             //Arrange 
-            var repository = new InMemoryProductRepository();
-            var controller = new HomeController(repository);
+            var repository = new Mock<IProductRepository>();
+            repository.Setup(x => x.ListProduct()).Returns(new List<Product>{
+                new Product(),new Product()
+            });
+
+            var controller = new HomeController(repository.Object);
 
             //Act
             var result =  Assert.IsType<ViewResult>(controller.List());
@@ -41,7 +47,7 @@ namespace MvcMovie.Tests
 
             // Assert
            
-            Assert.Equal(2,model.Count());
+           Assert.Equal(2,model.Count());
             
         }
     }
