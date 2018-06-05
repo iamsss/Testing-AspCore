@@ -1,6 +1,7 @@
 using System;
 using System.Net;
 using System.Threading.Tasks;
+using FluentAssertions;
 using Xunit;
 
 namespace MvcMovie.IntegrationTest
@@ -17,8 +18,10 @@ namespace MvcMovie.IntegrationTest
 
                 response.EnsureSuccessStatusCode();
 
-                Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+                response.StatusCode.Should().Be(HttpStatusCode.OK);
             }
         }
+
+        
     }
 }
