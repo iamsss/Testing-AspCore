@@ -28,6 +28,13 @@ namespace MvcMovie.mvc.Controllers
             return View(productRespository.ListProduct());
         }
 
+        [Route("api/home")]
+        [HttpGet]
+         public IActionResult GetAll()
+        {
+            return Ok(productRespository.ListProduct());
+        }
+
           public IActionResult Details(int id)
         {
             var product = productRespository.GetProductById(id);
