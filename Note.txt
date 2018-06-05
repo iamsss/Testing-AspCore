@@ -26,3 +26,5 @@ Here, think, SetUP as faking method call, we are just interested in Returns.
   And we can use fluent API for testing purposes
 
   Doc:  https://fluentassertions.com/documentation/
+
+First Testing tutorials : https://dotnetcorecentral.com/blog/asp-net-core-web-api-integration-testing-with-xunit/
