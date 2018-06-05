@@ -20,3 +20,9 @@ Here, think, SetUP as faking method call, we are just interested in Returns.
 >>> Read Moq Examples 
 
     https://github.com/Moq/moq4/wiki/Quickstart
+
+>> FluentAssertions is an assertion framework using fluent syntax.
+ It can be used with XUnit for testing.
+  And we can use fluent API for testing purposes
+
+  Doc:  https://fluentassertions.com/documentation/

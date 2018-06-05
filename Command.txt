@@ -30,4 +30,7 @@
     >> dotnet add package Microsoft.AspNetCore.TestHost --version 2.1.0
     >> dotnet restore
 
+### Adding FluentAssertions.AspNetCore.Mvc Packages in IntegrationTest
 
+    >> dotnet add package FluentAssertions.AspNetCore.Mvc
+    >> dotnet restore 
