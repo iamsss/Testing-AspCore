@@ -18,3 +18,16 @@
     >> cd MvcMovie.Tests
     >> dotnet add package Moq
     >> dotnet restore
+
+
+### Adding Reference of Main Project to the Integration test Project
+
+    >> cd MvcMovie.Tests
+    >> dotnet add reference ../MvcMovie.mvc/mvcmovie.mvc.csproj
+
+### Adding Microsoft TestHost Packages
+
+    >> dotnet add package Microsoft.AspNetCore.TestHost --version 2.1.0
+    >> dotnet restore
+
+
