@@ -25,10 +25,7 @@ namespace MvcMovie.mvc.Controllers
 
         public IActionResult List()
         {
-            var products = new List<Product> {
-               new Product {Id = 1, Name = "Product 1"},
-               new Product {Id = 2, Name = "Product 2"}
-          };
+            var products = productRespository.ListProduct();
 
             return View(products);
         }

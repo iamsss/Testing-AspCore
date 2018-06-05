@@ -5,6 +5,7 @@ using MvcMovie.mvc.Controllers;
 using MvcMovie.mvc.Models;
 using Xunit;
 using System.Linq;
+using MvcMovie.mvc.Infrastucture;
 
 namespace MvcMovie.Tests
 {
@@ -13,8 +14,11 @@ namespace MvcMovie.Tests
         [Fact]
         public void VerifyIndexViewType()
         {
+            
+
             //Arrange 
-            var controller = new HomeController();
+            var repository = new InMemoryProductRepository();
+            var controller = new HomeController(repository);
 
             //Act
             var result = controller.Index();
@@ -27,7 +31,8 @@ namespace MvcMovie.Tests
         public void VerifyListProductCount()
         {
             //Arrange 
-            var controller = new HomeController();
+            var repository = new InMemoryProductRepository();
+            var controller = new HomeController(repository);
 
             //Act
             var result =  Assert.IsType<ViewResult>(controller.List());
