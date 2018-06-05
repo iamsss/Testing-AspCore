@@ -28,6 +28,16 @@ namespace MvcMovie.mvc.Controllers
             return View(productRespository.ListProduct());
         }
 
+          public IActionResult Details(int id)
+        {
+            var product = productRespository.GetProductById(id);
+
+            if (product == null)
+                return View("NotFound");
+                
+            return View(product);
+        }
+
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
