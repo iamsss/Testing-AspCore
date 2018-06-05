@@ -1,0 +1,17 @@
+In simple English, Moq is a library which when you include in your project give you power to do Unit Testing in easy manner. Why? Because one function may call another, then another and so on. But in real what is needed, just the return value from first call to proceed to next line. Moq helps to ignore actual call of that method and instead you return what that function was returning. and verify after all lines of code has executed, what you desired is what you get or not. Too Much English, so here is an example:
+
+String Somethod()
+{
+  IHelper help = new IHelper();
+  String first = help.firstcall();
+  String second= secondcall(first);
+  return second;
+}
+Now, here first is needed to for secondcall(), but you can not actually call help.firstcall() as it in some other layer. So Mocking is done, faking that method was called:
+
+[TestMethod]
+public void SomeMethod_TestSecond
+{
+  mockedIHelper.Setup(x=>x.firstcall()).Returns("Whatever i want");  
+}
+Here, think, SetUP as faking method call, we are just interested in Returns.

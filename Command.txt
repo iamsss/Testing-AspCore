@@ -13,3 +13,8 @@
     >> dotnet add package Microsoft.AspNetCore.All
     >> dotnet test
 
+### Adding Packages Moq
+
+    >> cd MvcMovie.Tests
+    >> dotnet add package Moq
+    >> dotnet restore
