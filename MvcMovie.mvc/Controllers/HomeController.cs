@@ -4,12 +4,20 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using MvcMovie.mvc.Core;
 using MvcMovie.mvc.Models;
 
 namespace MvcMovie.mvc.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IProductRepository productRespository;
+
+        public HomeController(IProductRepository productRespository)
+        {
+            this.productRespository = productRespository;
+
+        }
         public IActionResult Index()
         {
             return View();
@@ -17,12 +25,12 @@ namespace MvcMovie.mvc.Controllers
 
         public IActionResult List()
         {
-           var products = new List<Product> {
+            var products = new List<Product> {
                new Product {Id = 1, Name = "Product 1"},
                new Product {Id = 2, Name = "Product 2"}
           };
 
-          return View(products);
+            return View(products);
         }
 
         public IActionResult About()

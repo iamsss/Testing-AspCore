@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MvcMovie.mvc.Core;
+using MvcMovie.mvc.Infrastucture;
 
 namespace MvcMovie.mvc
 {
@@ -22,6 +24,7 @@ namespace MvcMovie.mvc
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddScoped<IProductRepository,InMemoryProductRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
